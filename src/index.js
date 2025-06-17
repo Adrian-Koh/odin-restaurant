@@ -1,4 +1,5 @@
-import {addText} from './content.js';
+import {createHome} from './content.js';
+import './styles.css';
 
-console.log('Hello Odinite!');
-addText();
+
+createHome();
