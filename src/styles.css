@@ -15,7 +15,7 @@ img {
     height: auto;
 }
 
-#content {
+#home-container {
     display: grid;
     grid-template-rows: 1fr 3fr 2fr;
     justify-content: center;
@@ -24,7 +24,36 @@ img {
 }
 
 #menu-grid {
+    margin: 10px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
 }
+
+#category-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    border: solid 1px black;
+}
+
+#category-title {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    justify-self: center;
+    align-self: center;
+}
+
+#item-card {
+    border: solid 1px black;
+}
+
+#item-name {
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#item-desc {
+    text-align: center;
+    font-size: 16px;
+}
+
