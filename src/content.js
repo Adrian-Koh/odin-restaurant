@@ -68,7 +68,10 @@ class MenuCategory {
 
         const categoryTitle = document.createElement('div');
         categoryTitle.id = 'category-title';
-        categoryTitle.innerText = this.name;
+
+        const categoryTitleText = document.createElement('p');
+        categoryTitleText.innerText = this.name;
+        categoryTitle.appendChild(categoryTitleText);
 
         categorySection.appendChild(categoryTitle);
 
@@ -153,11 +156,11 @@ class About {
             const aboutItem = document.createElement('div');
             aboutItem.id = 'about-item';
 
-            const aboutTitle = document.createElement('p');
+            const aboutTitle = document.createElement('div');
             aboutTitle.id = 'about-title';
             aboutTitle.innerText = item.title;
 
-            const aboutContent = document.createElement('p');
+            const aboutContent = document.createElement('div');
             aboutContent.id = 'about-content';
             aboutContent.innerText = item.content;
 
@@ -170,7 +173,7 @@ class About {
 
 function createAboutItems() {
     const location = new AboutItem('Location', '2800 Wayzata Dr., Minneapolis MN 55425.');
-    const hours = new AboutItem('Hours', 'Mon-Fri: 11am-11pm\nSat: 12pm-1am\nSun:12pm-2am');
+    const hours = new AboutItem('Hours', 'Mon-Fri: 11am-11pm\nSat: 12pm-1am\nSun: 12pm-2am');
     const history = new AboutItem('Origin', 
         `Odin Restaurant started as a mom-and-pop shop in the 70\'s in rural Minnesota, serving patrons delicious food after a long day of work. 
          As our vision grew, we wanted to serve the best versions of our dishes and it has grown into the go-to spot for premium dishes in the Twin Cities.`);
