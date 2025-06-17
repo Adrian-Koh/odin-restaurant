@@ -1,5 +1,5 @@
-import {createHome} from './content.js';
+import {createHome, createMenuItems} from './content.js';
 import './styles.css';
 
 
-createHome();
+createMenuItems();

@@ -23,4 +23,60 @@ function createHome() {
     content.appendChild(info);
 }
 
-export {createHome};
+
+class FoodItem {
+    constructor(name, description) {
+        this.name = name;
+        this.description = description;
+    }
+}
+
+class Menu {
+    constructor() {
+        this.items = [];
+    }
+
+    addItem(item) {
+        this.items.push(item);
+    }
+
+    createMenu(menu) {
+        const menuGrid = document.createElement('div');
+        menuGrid.id = 'menu-grid';
+        content.appendChild(menuGrid);
+
+        for (const item of menu.items) {
+            const food = document.createElement('div');
+            food.id = 'food-card';
+            
+            const foodName = document.createElement('p');
+            foodName.id = 'food-name';
+            foodName.innerText = item.name;
+
+            const foodDesc = document.createElement('p');
+            foodDesc.id = 'food-desc';
+            foodDesc.innerText = item.description;
+
+            food.appendChild(foodName);
+            food.appendChild(foodDesc);
+            menuGrid.appendChild(food);
+        }
+    }
+}
+
+function createMenuItems() {
+    const pasta = new FoodItem('Pasta', 'Spaghetti mixed with bolognese sauce and basil leaves.');
+    const friedRice = new FoodItem('Fried Rice', 'Aromatic short-grain rice stir fried with egg, chicken and bell peppers');
+    const bibimbap = new FoodItem('Bibimbap', 'Rice mixed with gochujang, fried egg, minced beef and vegetables in a stone pot');
+    const unagidon = new FoodItem('Unagi Don', 'Smoked eel laid on a bed of rice, accompanied with a serving of eel sauce.');
+
+    const menu = new Menu();
+    menu.addItem(pasta);
+    menu.addItem(friedRice);
+    menu.addItem(bibimbap);
+    menu.addItem(unagidon);
+
+    menu.createMenu(menu);
+}
+
+export {createHome, createMenuItems};
